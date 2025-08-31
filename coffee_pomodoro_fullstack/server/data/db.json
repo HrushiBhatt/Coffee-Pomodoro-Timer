@@ -1,0 +1,17 @@
+{
+  "config": {
+    "focusMinutes": 25,
+    "shortBreakMinutes": 5,
+    "longBreakMinutes": 15,
+    "cyclesPerLongBreak": 4
+  },
+  "sessions": [
+    {
+      "id": "e4aa4357-f0fa-4ed5-8824-c2d4187296db",
+      "type": "short",
+      "startTime": "2025-08-31T01:58:23.491Z",
+      "status": "completed",
+      "endTime": "2025-08-31T01:58:26.721Z"
+    }
+  ]
+}
