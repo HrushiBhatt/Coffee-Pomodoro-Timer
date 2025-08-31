@@ -2,28 +2,74 @@
 
 ☕ Coffee Pomodoro – Full Stack
 
-A simple Pomodoro timer with a React frontend and Express backend. Track focus sessions, breaks, and daily stats — all saved in a local JSON file (no database needed).
+A full-stack Pomodoro timer that helps you stay productive with focus sessions and breaks.
+Built with React (Vite) on the frontend and Node.js + Express on the backend, it provides:
 
-🚀 Run Locally
-# Backend
+Configurable focus, short break, and long break durations
+
+Automatic phase switching and cycle tracking
+
+Daily stats (focus minutes, sessions, and ☕ coffees “earned”)
+
+Lightweight persistence using a local JSON file — no database setup needed
+
+🚀 Getting Started
+Run in Development
+# Start the backend
 cd server
 npm install
-npm start   # http://localhost:4000
+npm start       # API runs on http://localhost:4000
 
-# Frontend (in another terminal)
+# Start the frontend (new terminal)
 cd client
 npm install
-npm run dev # http://localhost:5173
+npm run dev     # React app runs on http://localhost:5173
 
-For production:
+Run in Production
+# Build the frontend
+cd client
+npm run build
 
-cd client && npm run build
-cd ../server && npm start   # serves API + built client on http://localhost:4000
+# Serve build + API with Express
+cd ../server
+npm start       # Full app runs on http://localhost:4000
+
+📂 Project Structure
+coffee-pomodoro-fullstack/
+├── client/   # React + Vite frontend
+│   ├── src/App.jsx   # Timer UI & logic
+│   ├── src/styles.css
+│   └── .env.development (API URL)
+└── server/   # Express backend
+    ├── index.js       # REST API
+    └── data/db.json   # Config + session history
 
 ⚙️ Tech Stack
 
-Frontend: React + Vite
+Frontend: React, Vite, CSS
 
-Backend: Node.js + Express
+Backend: Node.js, Express, CORS, UUID
 
-Storage: JSON file
+Storage: JSON file (config + sessions)
+
+🔑 API Overview
+
+GET /api/config – fetch timer settings
+
+PUT /api/config – update settings
+
+POST /api/sessions – start a new session
+
+PATCH /api/sessions/:id – update/end a session
+
+GET /api/stats – get today’s focus stats
+
+🌟 Future Enhancements
+
+Desktop notifications & sounds when a session ends
+
+Weekly/monthly history and streak charts
+
+User accounts with database support
+
+PWA for offline use
